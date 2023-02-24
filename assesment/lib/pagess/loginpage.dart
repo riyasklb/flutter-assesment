@@ -7,8 +7,9 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class loginpage extends StatelessWidget {
-  const loginpage({super.key});
-
+  loginpage({super.key});
+  var nameControler = TextEditingController();
+  var emailControler = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -54,8 +55,14 @@ class loginpage extends StatelessWidget {
               padding: const EdgeInsets.only(top: 48),
               child: Column(
                 children: [
-                  textformfield(text: 'Enter Username'),
-                  textformfield(text: 'Enter Password'),
+                  textformfield(
+                    text: 'Enter Username',
+                    controller: nameControler,
+                  ),
+                  textformfield(
+                    text: 'Enter Password',
+                    controller: nameControler,
+                  ),
                 ],
               ),
             ),

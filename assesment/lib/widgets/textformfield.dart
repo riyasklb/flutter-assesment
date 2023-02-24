@@ -2,14 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class textformfield extends StatelessWidget {
-  const textformfield({required this.text, super.key});
+  textformfield({required this.text, super.key, this.controller});
 
   final String text;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: TextFormField(
+        controller: controller,
         decoration: InputDecoration(
           fillColor: Colors.grey[250],
           hintText: text,
