@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class textformfield extends StatelessWidget {
-  textformfield({required this.text, super.key, this.controller});
-
+  textformfield(
+      {this.validator, required this.text, super.key, this.controller});
+  final String? Function(String?)? validator;
   final String text;
   final TextEditingController? controller;
   @override
@@ -12,6 +13,7 @@ class textformfield extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: TextFormField(
         controller: controller,
+        validator: validator,
         decoration: InputDecoration(
           fillColor: Colors.grey[250],
           hintText: text,
